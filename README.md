@@ -4,4 +4,4 @@
 - Restaurant reservation - Object oriented design using Go Interfaces
 - workerpool - Concurrent worker pool exclusively using Go Channels for synchronization
 - counter - Concurrent data structure exclusively using Go Channels for synchronization
-- 
+
