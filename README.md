@@ -1,33 +1,7 @@
-# Restaurant reservation - using interfaces in Golang for a decoupled design
+# Golang implemenation of design problems that I have encountered
 
-Goal: To design an OpenTable like restaurant reservation system.
-
-Key entities
-
-Restaurant
-- id
-- name
-- description
-- maxCapacity
-- numFree
-+ NewRestaurant
-+ ReserveTable(num)
-+ ReleaseTable(num)
-
-Customer
-- id
-- phoneNumber
-
-Reservation
-- id
-- restaurant
-- customer
-+ NewReservation
-+ CancelReservation
-
-
-main
-- Create 2 new restaurants // Read from restaurant table
-- Create 2 customers // Write to cutomer table
-- Customer 1 reserves first restaurant // Write to reservation table
-- Customer 2 reserves second restaurant // Write to reservatation table
+- LRUCache - Extensible design with Go Interfaces; Webserver with REST API for remote access
+- Restaurant reservation - Object oriented design using Go Interfaces
+- workerpool - Concurrent worker pool exclusively using Go Channels for synchronization
+- counter - Concurrent data structure exclusively using Go Channels for synchronization
+- 
