@@ -1,4 +1,4 @@
 ## Goal: 
-- Design a LRU cache supporting concurrent readers and writers
-- The implementation mechanism and storage engine must be extensible
-- Should support a gRPC interface and REST API
+- Design a LRU cache with an extensible design using Interfaces
+- Webserver implementing REST API for remotely accssing the LRU cache
+
