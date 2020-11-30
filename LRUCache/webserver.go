@@ -1,11 +1,11 @@
 package main
 
 import (
-	"net/http"
+	"LRUCache/lru"
+	"errors"
 	"flag"
 	"log"
-	"errors"
-	"LRUCache/lru"
+	"net/http"
 )
 
 type keyvalue struct {
@@ -17,7 +17,6 @@ type Server struct {
 	cache lru.LRU
 }
 
-
 func main() {
 	addr := flag.String("addr", ":8080", "endpoint address")
 	s := &Server{lru.NewLRU(3)} // Initialize server with cache
@@ -28,17 +27,15 @@ func main() {
 	log.Println("Stopping...")
 }
 
-
-
 // Handler
 func (s *Server) handleCache(w http.ResponseWriter, r *http.Request) {
 	switch r.Method {
-		case "GET":
-		s.handleCacheGet(w,r)
+	case "GET":
+		s.handleCacheGet(w, r)
 		return
 
-		case "POST":
-		s.handleCachePost(w,r)
+	case "POST":
+		s.handleCachePost(w, r)
 		return
 	}
 	respondHTTPErr(w, r, http.StatusNotFound)
@@ -59,15 +56,13 @@ func (s *Server) handleCachePost(w http.ResponseWriter, r *http.Request) {
 
 }
 
-
-
 func (s *Server) handleCacheGet(w http.ResponseWriter, r *http.Request) {
 	respondErr(w, r, http.StatusInternalServerError, errors.New("GET not implemented"))
 }
+
 /*
 // Default GET handler
 func (s *Server) handleCachePost(w http.ResponseWriter, r *http.Request) {
 	respondErr(w, r, http.StatusInternalServerError, errors.New("POST not implemented"))
 }
 */
-

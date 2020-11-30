@@ -16,6 +16,3 @@ func TestReleaseTableUnderOccupied(t *testing.T) {
 		t.Error("TestReleaseTable failed")
 	}
 }
-
-
-

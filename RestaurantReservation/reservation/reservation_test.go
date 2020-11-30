@@ -1,12 +1,11 @@
 package reservation
 
 import (
-	"RestaurantReservation/restaurant"
 	"RestaurantReservation/customer"
+	"RestaurantReservation/restaurant"
 )
 
-
-import  "testing"
+import "testing"
 
 func TestNewReservation(t *testing.T) {
 	rest := restaurant.NewRestaurant(1, "Smokehouse", "BBQ", 10)

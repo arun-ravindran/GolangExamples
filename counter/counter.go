@@ -1,20 +1,18 @@
 package counter
 
-
 type Counter struct {
-	count int
+	count          int
 	updateRequests chan *UpdateOp
 }
 
 type UpdateOp struct {
-	amount int
+	amount  int
 	confirm chan int
 }
 
-
 func NewCounter() *Counter {
-	return &Counter {
-		count: 0,
+	return &Counter{
+		count:          0,
 		updateRequests: make(chan *UpdateOp, 4),
 	}
 }
@@ -24,7 +22,7 @@ func NewCounter() *Counter {
 func (ctr *Counter) Update(amt int) int {
 	uOp := &UpdateOp{amount: amt, confirm: make(chan int)}
 	ctr.updateRequests <- uOp
-	newVal :=  <-uOp.confirm
+	newVal := <-uOp.confirm
 	return newVal
 }
 
@@ -32,9 +30,9 @@ func (ctr *Counter) Update(amt int) int {
 func (ctr *Counter) ProcessUpdates() {
 	for {
 		select {
-			case request := <-ctr.updateRequests:
-				ctr.count += request.amount
-				request.confirm <- ctr.count
+		case request := <-ctr.updateRequests:
+			ctr.count += request.amount
+			request.confirm <- ctr.count
 		}
 	}
 }
