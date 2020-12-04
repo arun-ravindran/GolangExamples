@@ -5,4 +5,5 @@
 - workerpool - Concurrent worker pool exclusively using Go Channels for synchronization
 - counter - Concurrent data structure exclusively using Go Channels for synchronization
 - parallelSum - Concurrent summing using Go routines, with channels for input/output and synchronization 
+- wordcountServer - Demo of Go's net/rpc; implements a wordcount server
 
