@@ -1,4 +1,4 @@
-# Golang implemenation of design problems that I have encountered
+# Golang implementation of design problems that I have encountered
 
 - LRUCache - Extensible design with Go Interfaces; Webserver with REST API for remote access
 - Restaurant reservation - Object oriented design using Go Interfaces
