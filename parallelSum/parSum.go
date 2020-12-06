@@ -20,6 +20,7 @@ func sumWorker(nums chan int, out chan int) {
 func sum(num int, fileName string) int {
 	file, err := os.Open(fileName)
 	checkError(err)
+	defer file.Close()
 
 	reader := bufio.NewReader(file) // Read numbers
 	intSlice, err := readInts(reader)
