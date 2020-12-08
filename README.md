@@ -6,4 +6,5 @@
 - counter - Concurrent data structure exclusively using Go Channels for synchronization
 - parallelSum - Concurrent summing using Go routines, with channels for input/output and synchronization 
 - wordcountServer - Demo of Go's net/rpc; implements a wordcount server
+- jsonEncDec - Encode input file contents to JSON, write to JSON file, read JSON file, decode and write to output file
 
