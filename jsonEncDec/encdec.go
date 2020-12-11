@@ -54,12 +54,13 @@ func encode(inFileName, interFileName, outFileName string) {
 	var kv KeyVal
 	kvs = nil
 	for {
+		kv := kv
+
 		if err := dec.Decode(&kv); err == io.EOF {
 			break
 		} else {
 			checkError(err)
 		}
-		kv := kv
 		kvs = append(kvs, &kv)
 
 	}
