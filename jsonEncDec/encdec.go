@@ -6,7 +6,6 @@ package jsonEncDec
 import (
 	"bufio"
 	"encoding/json"
-	"io"
 	"log"
 	"os"
 )
@@ -53,14 +52,10 @@ func encode(inFileName, interFileName, outFileName string) {
 	dec := json.NewDecoder(jsonF)
 	var kv KeyVal
 	kvs = nil
-	for {
-		kv := kv
-
-		if err := dec.Decode(&kv); err == io.EOF {
-			break
-		} else {
-			checkError(err)
-		}
+	for dec.More() {
+		kv := kv // Create a new instance
+		dec.Decode(&kv)
+		checkError(err)
 		kvs = append(kvs, &kv)
 
 	}
